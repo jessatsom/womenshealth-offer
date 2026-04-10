@@ -288,6 +288,11 @@
 
     .comparison { background: var(--charcoal); padding: 88px 32px; }
     .comparison-inner { max-width: 920px; margin: 0 auto; }
+    .vs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    @media (max-width: 900px) {
+      .vs-table { min-width: 540px; }
+      .vs-table-wrap { margin: 0 -8px; padding: 0 8px; }
+    }
     .comparison h2 {
       color: var(--white); font-size: clamp(28px, 3vw, 38px);
       text-align: center; margin-bottom: 8px;
@@ -593,6 +598,7 @@
         <p class="section-eyebrow" style="text-align:center; color: var(--teal-light); margin-bottom: 12px;">— The SOM Difference</p>
         <h2 id="comparison-heading">Not your average women's health visit.</h2>
         <p class="comparison-sub">We've heard the stories. You deserve better.</p>
+        <div class="vs-table-wrap">
         <table class="vs-table" role="table" aria-label="Comparison of SOM Aesthetics vs traditional healthcare">
           <thead>
             <tr>
@@ -611,6 +617,7 @@
             <tr><td>Longevity & peptides</td><td>Not offered</td><td>PhD-backed, research-informed</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
 
