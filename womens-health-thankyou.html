@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | SOM Aesthetics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CFNYT1F51"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1CFNYT1F51');
+    gtag('event', 'womenshealth_form_submission');
+  </script>
+
+  <style>
+    :root {
+      --dark-teal: #0f4a5d;
+      --teal-deep: #2c7d86;
+      --teal-light: #7ecfd5;
+      --lilac: #bfaed5;
+      --soft-purple: #f3f0f8;
+      --grey-mid: #4a5060;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--soft-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;
+      padding: 40px 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-top: 4px solid var(--lilac);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 48px rgba(15,74,93,0.12);
+    }
+
+    .checkmark {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--soft-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .checkmark svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--teal-deep);
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      color: var(--dark-teal);
+      font-weight: normal;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--grey-mid);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal-deep);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--dark-teal); }
+
+    .note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--grey-mid);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="checkmark">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1>Thank you.</h1>
+    <p>We'll be in touch soon to confirm your appointment. Same-week appointments are typically available — we look forward to connecting with you.</p>
+    <a href="https://www.som.md" class="btn" target="_blank" rel="noopener" onclick="gtag('event','womenshealth_thankyou_explore_som_click')">Explore SOM Aesthetics →</a>
+    <p class="note">Questions? Call us at <a href="tel:7607667546" style="color:var(--teal-deep);">760-766-7546</a></p>
+  </div>
+</body>
+</html>
