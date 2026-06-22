@@ -305,13 +305,12 @@
     }
     .founder-body strong { font-weight: 600; color: var(--dark-teal); }
     .founder-credential {
-      display: flex; align-items: center; gap: 12px;
-      margin-top: 32px; padding: 20px 24px;
+      margin-top: 0; padding: 16px 20px;
       background: var(--soft-purple); border-left: 3px solid var(--lilac);
     }
     .founder-credential p { font-size: 13px; line-height: 1.6; color: var(--grey-mid); }
     .founder-credential p strong {
-      display: block; font-weight: 700; color: var(--dark-teal); margin-bottom: 2px;
+      display: block; font-weight: 700; color: var(--dark-teal); margin-bottom: 4px; font-size: 14px;
     }
 
     /* ── SERVICES ── */
@@ -511,7 +510,7 @@
     .mobile-sticky-text strong { color: var(--teal-light); display: block; }
 
     @media (max-width: 900px) {
-      .hero { background-position: 60% 20%; }
+      .hero { background-position: 82% 20%; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner .quiz-card { order: 2; }
       .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
@@ -707,39 +706,33 @@
       </div>
     </section>
 
-    <!-- ── FOUNDER ── -->
-    <section class="founder" aria-labelledby="founder-heading">
-      <div class="founder-inner">
-        <div class="founder-photo-wrap">
-          <img src="images/jess.jpg" alt="Jessica Shisler, PhD — Co-Founder & Chief Research Officer, SOM Aesthetics" class="founder-photo" style="object-position:center 20%;" />
-          <div class="founder-photo-accent" aria-hidden="true">
-            <strong>PhD</strong>
-            <span>Biochemistry<br>& Longevity</span>
-          </div>
-        </div>
-        <div class="founder-text">
-          <p class="section-eyebrow">A Message from Our Founder</p>
-          <h2 id="founder-heading">The research came first.<br><em>Then the practice followed.</em></h2>
-          <p class="founder-body">Despite two decades of studying longevity and metabolism, I hit perimenopause and found myself in the same loop our patients describe: vague symptoms, normal-range labs, and a system that didn't have time to go deeper. <strong>That experience made this personal.</strong></p>
-          <p class="founder-body">The research has caught up to what many of us already felt. A 2024 analysis in <em>The Lancet Diabetes &amp; Endocrinology</em> reinforced what's now called the "timing hypothesis": <strong>women who begin hormone optimization within 10 years of menopause show significantly better cardiovascular and metabolic outcomes than those who start later or not at all.</strong> The window matters. Which is exactly why we built a program designed to catch women in perimenopause, before that window closes.</p>
-          <p class="founder-body">What we've built is grounded in real research and delivered through the concierge model women actually deserve. Not a bolt-on wellness offering. A program built from scratch, by someone who needed it herself.</p>
-          <div class="founder-credential">
-            <div>
-              <p><strong>Co-Founder & Chief Research Officer</strong>Two decades of research in longevity medicine and metabolic health. Overseeing clinical trials at SOM Aesthetics, Encinitas.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ── TRUST BAR ── -->
     <section class="trust-bar" aria-label="Why choose SOM Aesthetics">
       <div class="trust-bar-inner">
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">✦</span><strong>Concierge Access</strong><p>Direct line to your provider. No phone trees, no waiting rooms</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">👩‍⚕️</span><strong>Physician-Led</strong><p>Board-certified provider. Same face every visit, no hand-offs</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">📅</span><strong>Same-Week Appts</strong><p>Skip the 6-month waitlist. We have time for you, this week</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>PhD-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>Ph.D.-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">🧬</span><strong>Decades of Research</strong><p>Longevity and metabolism science since 2006 — applied to your care</p></div>
+      </div>
+    </section>
+
+    <!-- ── FOUNDER ── -->
+    <section class="founder" aria-labelledby="founder-heading">
+      <div class="founder-inner">
+        <div class="founder-photo-wrap">
+          <img src="images/jess.jpg" alt="Jessica Shisler, Ph.D. — Co-Founder & Chief Research Officer, SOM Aesthetics" class="founder-photo" style="object-position:center 20%;" />
+          <div class="founder-credential">
+            <p><strong>Jessica Shisler, Ph.D.</strong>Co-Founder & Chief Research Officer, SOM Aesthetics<br>Completed her research fellowship with the National Institute on Aging at NIH in Longevity, Healthspan & Metabolism.</p>
+          </div>
+        </div>
+        <div class="founder-text">
+          <p class="section-eyebrow">A Message from Our Founder</p>
+          <h2 id="founder-heading">Built by a longevity researcher<br><em>who has been in your shoes.</em></h2>
+          <p class="founder-body">Despite two decades of studying longevity and metabolism, I hit perimenopause and found myself in the same loop our patients describe: vague symptoms, normal-range labs, and a system that didn't have time to go deeper. <strong>That experience made this personal.</strong></p>
+          <p class="founder-body">The research has caught up to what many of us already felt. A 2024 analysis in <em>The Lancet Diabetes &amp; Endocrinology</em> reinforced what's now called the "timing hypothesis": <strong>women who begin hormone optimization within 10 years of menopause show significantly better cardiovascular and metabolic outcomes than those who start later or not at all.</strong> The window matters. Which is exactly why we built a program designed to catch women in perimenopause, before that window closes.</p>
+          <p class="founder-body">What we've built is grounded in real research and delivered through the concierge model women actually deserve. Not a bolt-on wellness offering. A program built from scratch, by someone who needed it herself.</p>
+        </div>
       </div>
     </section>
 
