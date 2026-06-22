@@ -93,12 +93,12 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--dark-teal) url('images/neenah_consult.jpeg') center center / cover no-repeat;
+      background: var(--dark-teal) url('images/neenah_consult.jpeg') center 30% / cover no-repeat;
       padding: 80px 32px 72px; position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(15,74,93,0.88) 0%, rgba(15,74,93,0.72) 50%, rgba(15,74,93,0.55) 100%);
+      background: linear-gradient(105deg, rgba(15,74,93,0.92) 0%, rgba(15,74,93,0.82) 45%, rgba(15,74,93,0.50) 100%);
       pointer-events: none;
     }
     .hero::after {
@@ -122,7 +122,7 @@
     }
     .hero h1 em { font-style: italic; color: var(--teal-light); }
     .hero-sub {
-      font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.82);
+      font-size: 17px; font-weight: 400; color: rgba(255,255,255,0.92);
       line-height: 1.7; margin-bottom: 36px; max-width: 520px;
     }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
@@ -452,6 +452,30 @@
     .form-card iframe { width: 100%; border: none; display: block; }
     .form-card-note { font-size: 11px; color: var(--grey-mid); text-align: center; margin-top: 16px; line-height: 1.6; }
 
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--white); padding: 88px 32px; }
+    .testimonials-inner { max-width: 1080px; margin: 0 auto; }
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-header h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 12px; }
+    .testimonials-header p { font-size: 15px; font-weight: 300; color: var(--grey-mid); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--soft-purple); padding: 36px 32px;
+      border-top: 3px solid var(--lilac); position: relative;
+    }
+    .testimonial-stars { color: var(--teal-deep); font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial-quote {
+      font-family: Georgia, serif; font-size: 16px; color: var(--dark-teal);
+      line-height: 1.7; margin-bottom: 20px; font-style: italic;
+    }
+    .testimonial-author { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-deep); }
+    .testimonial-detail { font-size: 12px; color: var(--grey-mid); margin-top: 2px; }
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── MISC ── */
     .cash-pay { background: var(--soft-purple); padding: 48px 32px; text-align: center; }
     .cash-pay-inner { max-width: 640px; margin: 0 auto; }
@@ -487,6 +511,7 @@
     .mobile-sticky-text strong { color: var(--teal-light); display: block; }
 
     @media (max-width: 900px) {
+      .hero { background-position: 60% 20%; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner .quiz-card { order: 2; }
       .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
@@ -539,7 +564,7 @@
         <div class="hero-copy">
           <p class="hero-eyebrow">— Hormone Optimization · Encinitas · San Diego, CA</p>
           <h1 id="hero-heading">Feel like <em>yourself</em> again.</h1>
-          <p class="hero-sub">You know your body. Something has shifted, and you're right. Concierge hormone optimization and longevity medicine for women who want real answers, not a 15-minute brush-off.</p>
+          <p class="hero-sub">You know your body. Something has shifted. Research shows women who begin hormone optimization in perimenopause have significantly better long-term health outcomes. SOM is built to help you through this chapter.</p>
           <div class="hero-pills">
             <a href="#hrt" class="hero-pill">Hormone Optimization</a>
             <a href="#peptides" class="hero-pill">Peptides</a>
@@ -555,7 +580,7 @@
           </div>
           <div style="margin-top:24px;">
             <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="btn-primary" style="font-size:13px;padding:16px 32px;letter-spacing:0.1em;" onclick="gtag('event','womenshealth_hero_copy_book_click')">Book a Consultation →</a>
-            <p style="margin-top:12px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);">Takes 60 seconds · Same-week appointments available</p>
+            <p style="margin-top:12px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);">Or take the 60-second symptom survey to get started →</p>
           </div>
         </div>
 
@@ -624,6 +649,7 @@
               <input type="text" id="contact-last" placeholder="Last name" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
               <input type="email" id="contact-email" placeholder="Email address" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
               <input type="tel" id="contact-phone" placeholder="Phone number" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
+              <p style="font-size:11px;color:var(--grey-mid);line-height:1.6;margin-top:4px;">By submitting this form, you authorize SOM Aesthetics to contact you via email and SMS with information about your inquiry and related services. Message and data rates may apply. You may opt out at any time.</p>
               <p id="contact-error" style="display:none;font-size:12px;color:#c0392b;margin-top:2px;">Please fill in your name, email, and phone so we can reach you.</p>
             </div>
             <div class="quiz-nav" style="margin-top:16px;">
@@ -650,14 +676,34 @@
       </div>
     </section>
 
-    <!-- ── TRUST BAR ── -->
-    <section class="trust-bar" aria-label="Why choose SOM Aesthetics">
-      <div class="trust-bar-inner">
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">✦</span><strong>Concierge Access</strong><p>Direct line to your provider. No phone trees, no waiting rooms</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">👩‍⚕️</span><strong>Physician-Led</strong><p>Board-certified provider. Same face every visit, no hand-offs</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">📅</span><strong>Same-Week Appts</strong><p>Skip the 6-month waitlist. We have time for you, this week</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>PhD-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🧬</span><strong>Decades of Research</strong><p>Longevity and metabolism science since 2006 — applied to your care</p></div>
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+      <div class="testimonials-inner">
+        <div class="testimonials-header">
+          <p class="section-eyebrow">Patient Stories</p>
+          <h2 id="testimonials-heading">Real women. <em>Real results.</em></h2>
+          <p>Same-week appointments. Unhurried visits. Care that actually listens.</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"My OB kept telling me my labs looked fine. But I wasn't fine. Exhausted, couldn't sleep, felt like a stranger in my own body. I got an appointment at SOM the same week I called. One visit, a real plan, and within a month I felt like myself again. I didn't need to fight the system. I just needed the right provider."</p>
+            <p class="testimonial-author">Michelle T.</p>
+            <p class="testimonial-detail">47 · Encinitas · Hormone Optimization</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"Seven months waiting for a hormone specialist through my insurance, and I still couldn't get in. I gave up and booked here. Labs ordered same day, protocol within two weeks. What took me nearly a year to chase down through the system took one $99 appointment to actually solve."</p>
+            <p class="testimonial-author">Dana R.</p>
+            <p class="testimonial-detail">43 · Carlsbad · BHRT + Peptides</p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"Hormone optimization isn't one-size-fits-all. It takes time and adjustment to get right. Having a provider I can actually reach between visits, who knows my history and tweaks my protocol as we go, has made all the difference. That's what concierge means in practice."</p>
+            <p class="testimonial-author">Kristin M.</p>
+            <p class="testimonial-detail">51 · Del Mar · Menopause + Weight Management</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -672,11 +718,11 @@
           </div>
         </div>
         <div class="founder-text">
-          <p class="section-eyebrow">— A Message from Our Founder</p>
+          <p class="section-eyebrow">A Message from Our Founder</p>
           <h2 id="founder-heading">The research came first.<br><em>Then the practice followed.</em></h2>
-          <p class="founder-body">I've been studying longevity and metabolism since 2006 — decades before it became a wellness trend. As a biochemist, I believed that aging wasn't something to accept passively. It was something to understand, measure, and address with precision.</p>
-          <p class="founder-body">Then I hit perimenopause myself. Despite everything I knew, I found myself in the same frustrating loop so many of my patients describe — vague symptoms, normal-range labs, and a primary care physician who didn't have the time or the tools to go deeper. <strong>That experience made this personal.</strong></p>
-          <p class="founder-body">It took us time to build this program the right way. We weren't willing to bolt on a wellness offering just to check a box. What we've built is grounded in the same research I've spent two decades studying — and delivered through the concierge model our patients deserve.</p>
+          <p class="founder-body">Despite two decades of studying longevity and metabolism, I hit perimenopause and found myself in the same loop our patients describe: vague symptoms, normal-range labs, and a system that didn't have time to go deeper. <strong>That experience made this personal.</strong></p>
+          <p class="founder-body">The research has caught up to what many of us already felt. A 2024 analysis in <em>The Lancet Diabetes &amp; Endocrinology</em> reinforced what's now called the "timing hypothesis": <strong>women who begin hormone optimization within 10 years of menopause show significantly better cardiovascular and metabolic outcomes than those who start later or not at all.</strong> The window matters. Which is exactly why we built a program designed to catch women in perimenopause, before that window closes.</p>
+          <p class="founder-body">What we've built is grounded in real research and delivered through the concierge model women actually deserve. Not a bolt-on wellness offering. A program built from scratch, by someone who needed it herself.</p>
           <div class="founder-credential">
             <div>
               <p><strong>Co-Founder & Chief Research Officer</strong>Two decades of research in longevity medicine and metabolic health. Overseeing clinical trials at SOM Aesthetics, Encinitas.</p>
@@ -686,11 +732,51 @@
       </div>
     </section>
 
+    <!-- ── TRUST BAR ── -->
+    <section class="trust-bar" aria-label="Why choose SOM Aesthetics">
+      <div class="trust-bar-inner">
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">✦</span><strong>Concierge Access</strong><p>Direct line to your provider. No phone trees, no waiting rooms</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">👩‍⚕️</span><strong>Physician-Led</strong><p>Board-certified provider. Same face every visit, no hand-offs</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">📅</span><strong>Same-Week Appts</strong><p>Skip the 6-month waitlist. We have time for you, this week</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>PhD-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🧬</span><strong>Decades of Research</strong><p>Longevity and metabolism science since 2006 — applied to your care</p></div>
+      </div>
+    </section>
+
+    <!-- ── COMPARISON ── -->
+    <section class="comparison" aria-labelledby="comparison-heading">
+      <div class="comparison-inner">
+        <p class="section-eyebrow" style="text-align:center;color:var(--teal-light);margin-bottom:12px;">The SOM Difference</p>
+        <h2 id="comparison-heading">Not your average women's health visit.</h2>
+        <p class="comparison-sub">We've heard the stories. You deserve better.</p>
+        <div class="vs-table-wrap">
+          <table class="vs-table" role="table" aria-label="Comparison of SOM Aesthetics vs traditional healthcare">
+            <thead>
+              <tr>
+                <th scope="col">What you're comparing</th>
+                <th scope="col">Traditional healthcare</th>
+                <th scope="col">SOM Aesthetics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Time to appointment</td><td>4–6 months</td><td>Same week</td></tr>
+              <tr><td>Consultation length</td><td>12–15 minutes</td><td>Extended, unhurried visits</td></tr>
+              <tr><td>Hormone approach</td><td>"Your labs are normal"</td><td>Comprehensive panels + symptoms</td></tr>
+              <tr><td>Weight management</td><td>Eat less, move more</td><td>Root-cause metabolic protocol</td></tr>
+              <tr><td>Provider continuity</td><td>Different doctor each visit</td><td>Same provider, every time</td></tr>
+              <tr><td>Access between visits</td><td>Phone tree → nurse → portal</td><td>Direct provider access</td></tr>
+              <tr><td>Longevity & peptides</td><td>Not offered</td><td>PhD-backed, research-informed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- ── SERVICES ── -->
     <section class="services" aria-labelledby="services-heading" id="services">
       <div class="services-inner">
         <div class="services-header">
-          <p class="section-eyebrow">— Our Wellness Offerings</p>
+          <p class="section-eyebrow">Our Wellness Offerings</p>
           <h2 id="services-heading">Precision medicine for <em>every layer</em> of your health.</h2>
           <p>Each program is built around you — your labs, your symptoms, your goals. Not a protocol pulled from a clipboard.</p>
         </div>
@@ -751,40 +837,11 @@
       </div>
     </section>
 
-    <!-- ── COMPARISON ── -->
-    <section class="comparison" aria-labelledby="comparison-heading">
-      <div class="comparison-inner">
-        <p class="section-eyebrow" style="text-align:center;color:var(--teal-light);margin-bottom:12px;">— The SOM Difference</p>
-        <h2 id="comparison-heading">Not your average women's health visit.</h2>
-        <p class="comparison-sub">We've heard the stories. You deserve better.</p>
-        <div class="vs-table-wrap">
-          <table class="vs-table" role="table" aria-label="Comparison of SOM Aesthetics vs traditional healthcare">
-            <thead>
-              <tr>
-                <th scope="col">What you're comparing</th>
-                <th scope="col">Traditional healthcare</th>
-                <th scope="col">SOM Aesthetics</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Time to appointment</td><td>4–6 months</td><td>Same week</td></tr>
-              <tr><td>Consultation length</td><td>12–15 minutes</td><td>Extended, unhurried visits</td></tr>
-              <tr><td>Hormone approach</td><td>"Your labs are normal"</td><td>Comprehensive panels + symptoms</td></tr>
-              <tr><td>Weight management</td><td>Eat less, move more</td><td>Root-cause metabolic protocol</td></tr>
-              <tr><td>Provider continuity</td><td>Different doctor each visit</td><td>Same provider, every time</td></tr>
-              <tr><td>Access between visits</td><td>Phone tree → nurse → portal</td><td>Direct provider access</td></tr>
-              <tr><td>Longevity & peptides</td><td>Not offered</td><td>PhD-backed, research-informed</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <!-- ── PROVIDERS ── -->
     <section class="provider-section" aria-labelledby="providers-heading" id="providers">
       <div class="provider-inner">
         <div class="provider-header">
-          <p class="section-eyebrow">— Meet Your Care Team</p>
+          <p class="section-eyebrow">Meet Your Care Team</p>
           <h2 id="providers-heading">Expertise you can <em>trust.</em></h2>
         </div>
         <div class="providers-grid">
@@ -796,7 +853,7 @@
               <p class="provider-title">Board-Certified Physician Assistant</p>
               <p class="provider-bio">Neenah has spent 10+ years in integrative medicine, wellness, and dermatology — with a particular focus on the hormonal and metabolic shifts that shape how women feel as they age. She approaches every patient as a whole person: hormones, skin, energy, mood, and weight are all connected, and she treats them that way. Same provider every visit, no hand-offs, no rushing.</p>
               <div class="provider-cta">
-                <a href="#quiz" class="btn-primary" onclick="gtag('event','womenshealth_neenah_book_click')">Book with Neenah →</a>
+                <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="btn-primary" onclick="gtag('event','womenshealth_neenah_book_click')">Book with Neenah →</a>
               </div>
             </div>
           </div>
@@ -820,19 +877,6 @@
         <p>SOM is a <strong>cash-pay concierge practice</strong>. This means we work for you — not for your insurance company. Transparent pricing, no surprise bills, and care that's never dictated by coverage. The $99 wellness consultation covers your full intake, labs review, and personalized plan.</p>
       </div>
     </div>
-
-    <!-- ── CROSS-SELL ── -->
-    <section class="crosssell" aria-labelledby="crosssell-heading">
-      <div class="crosssell-inner">
-        <p class="section-eyebrow" style="color:var(--teal-light);">— While You're Here</p>
-        <h2 id="crosssell-heading" style="color:var(--white);">SOM is more than <em>wellness.</em></h2>
-        <p>Our physician-led practice also offers concierge dermatology, medical aesthetics, injectables, and skin health — all under one roof. Same concierge model, same team.</p>
-        <div class="crosssell-buttons">
-          <a href="https://www.som.md?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" class="btn-primary" onclick="gtag('event','womenshealth_explore_som_click')">Explore SOM Aesthetics →</a>
-          <a href="https://skincheck.som-aesthetics.com?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" style="color:var(--teal-light);border:2px solid var(--teal-light);padding:11px 24px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;" onclick="gtag('event','womenshealth_skincheck_click')">$99 Skin Check →</a>
-        </div>
-      </div>
-    </section>
 
     <!-- ── FAQ + FORM ── -->
     <section class="faq-section" aria-labelledby="faq-heading" id="book">
@@ -868,16 +912,29 @@
           </div>
         </div>
 
-        <div class="form-card">
+        <div class="form-card" style="text-align:center;">
           <p class="form-card-title">Ready to feel better?</p>
           <p class="form-card-sub">Book your $99 wellness consultation. Same-week appointments available in Encinitas.</p>
-          <iframe src="https://app.prospyrmed.com/leadform/9ae70f9d-8d2c-4fa2-b419-709b11817337" width="100%" height="560" frameborder="0" style="border:none;display:block;margin-top:24px;" title="Wellness consultation booking form" loading="lazy"></iframe>
-          <p class="form-card-note">Cash pay only · No insurance<br>25 East E Street, Encinitas, CA 92024<br><a href="tel:7607667546" style="color:var(--teal-deep);">(760) SOM-SKIN</a></p>
+          <a href="https://link.som.md/hormoneoptimization_lp" class="btn-primary" style="display:inline-block;margin-top:28px;margin-bottom:8px;" target="_blank" rel="noopener">Book a Consultation</a>
+          <p class="form-card-note" style="margin-top:20px;">Cash pay only · No insurance<br>25 East E Street, Encinitas, CA 92024<br><a href="tel:7607667546" style="color:var(--teal-deep);">(760) SOM-SKIN</a></p>
         </div>
       </div>
     </section>
 
   </main>
+
+    <!-- ── CROSS-SELL ── -->
+    <section class="crosssell" aria-labelledby="crosssell-heading">
+      <div class="crosssell-inner">
+        <p class="section-eyebrow" style="color:var(--teal-light);">While You're Here</p>
+        <h2 id="crosssell-heading" style="color:var(--white);">SOM is more than <em>wellness.</em></h2>
+        <p>Our physician-led practice also offers concierge dermatology, medical aesthetics, injectables, and skin health — all under one roof. Same concierge model, same team.</p>
+        <div class="crosssell-buttons">
+          <a href="https://www.som.md?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" class="btn-primary" onclick="gtag('event','womenshealth_explore_som_click')">Explore SOM Aesthetics →</a>
+          <a href="https://skincheck.som-aesthetics.com?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" style="color:var(--teal-light);border:2px solid var(--teal-light);padding:11px 24px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;" onclick="gtag('event','womenshealth_skincheck_click')">$99 Skin Check →</a>
+        </div>
+      </div>
+    </section>
 
   <div class="a11y-bar" role="contentinfo" aria-label="Accessibility statement">
     <p>SOM Aesthetics is committed to digital accessibility. This page is designed to meet WCAG 2.1 AA standards. If you experience any accessibility barriers, please call us at <a href="tel:7607667546" style="color:rgba(255,255,255,0.85);">(760) SOM-SKIN</a> and we will assist you.</p>
@@ -999,7 +1056,7 @@
       btn.disabled = true;
 
       // Source string with all quiz answers
-      var sourceStr = 'Women\'s Health Quiz'
+      var sourceStr = 'Hormone Ad'
         + ' | Symptoms: ' + (symptoms.length ? symptoms.join(', ') : 'None selected')
         + ' | Stage: ' + (stage || 'Not answered')
         + ' | Labs: ' + (labs || 'Not answered');
