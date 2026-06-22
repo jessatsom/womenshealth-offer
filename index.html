@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
   <title>Women's Health Consultation $99 | SOM Aesthetics · Encinitas, CA</title>
   <meta name="description" content="Physician-led hormone therapy (HRT/BHRT), peptide therapy, longevity medicine & medical weight management in Encinitas & San Diego, CA. $99 women's health consultation. Same-week appointments. PhD-founded, board-certified care." />
   <meta name="keywords" content="women's health Encinitas, women's health San Diego, hormone replacement therapy Encinitas, HRT San Diego, BHRT women Encinitas, peptide therapy San Diego, women's health Encinitas, longevity medicine San Diego, medical weight loss Encinitas, GLP-1 semaglutide Encinitas, tirzepatide San Diego, perimenopause doctor Encinitas, menopause specialist San Diego, bioidentical hormones Encinitas, concierge women's health San Diego, NAD+ therapy Encinitas, integrative medicine Encinitas CA" />
+  <link rel="canonical" href="https://womenshealth.som-aesthetics.com/" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +37,6 @@
       --grey: #c9d2db;
       --off-white: #f8f7f5;
       --white: #ffffff;
-      --warm-blush: #f5ede8;
-      --rose-accent: #c4907a;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -75,23 +75,12 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 68px; gap: 16px;
     }
-    .nav-logo {
-      font-family: Georgia, serif; font-size: 20px;
-      color: var(--dark-teal); text-decoration: none;
-      letter-spacing: 0.04em; font-style: italic;
-    }
-    .nav-logo span {
-      font-style: normal; font-size: 11px;
-      font-family: 'Montserrat', sans-serif; font-weight: 600;
-      letter-spacing: 0.12em; color: var(--teal);
-      display: block; text-transform: uppercase; margin-top: -2px;
-    }
-    .nav-right { display: flex; align-items: center; gap: 16px; }
     .nav-phone {
       font-size: 13px; font-weight: 600;
       color: var(--grey-mid); text-decoration: none; letter-spacing: 0.02em;
     }
     .nav-phone:hover { color: var(--dark-teal); }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
     .btn-primary {
       background: var(--teal-deep); color: var(--white);
       font-family: 'Montserrat', sans-serif; font-size: 12px;
@@ -102,20 +91,20 @@
     }
     .btn-primary:hover { background: var(--dark-teal); transform: translateY(-1px); }
 
+    /* ── HERO ── */
     .hero {
-      background: var(--dark-teal);
+      background: var(--dark-teal) url('images/neenah_consult.jpeg') center center / cover no-repeat;
       padding: 80px 32px 72px; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: ''; position: absolute; top: -120px; right: -100px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(69,162,170,0.12) 0%, transparent 70%);
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(15,74,93,0.88) 0%, rgba(15,74,93,0.72) 50%, rgba(15,74,93,0.55) 100%);
       pointer-events: none;
     }
     .hero::after {
       content: ''; position: absolute; bottom: -80px; left: -60px;
       width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(191,174,213,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(191,174,213,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-inner {
@@ -158,25 +147,114 @@
       text-transform: uppercase; color: rgba(255,255,255,0.7); line-height: 1.5;
     }
 
-    .form-card {
+    /* ── QUIZ CARD ── */
+    .quiz-card {
       background: var(--white); border-top: 4px solid var(--lilac);
-      padding: 40px 36px; box-shadow: 0 8px 48px rgba(15,74,93,0.18);
+      padding: 36px 32px; box-shadow: 0 8px 48px rgba(15,74,93,0.18);
     }
-    .form-card-title {
-      font-family: Georgia, serif; font-size: 24px;
+    .quiz-card-title {
+      font-family: Georgia, serif; font-size: 22px;
       color: var(--dark-teal); margin-bottom: 6px;
     }
-    .form-card-sub {
-      font-size: 13px; font-weight: 400; color: var(--grey-mid);
-      border-bottom: 1px solid var(--grey); padding-bottom: 20px;
-      margin-bottom: 24px; line-height: 1.5;
-    }
-    .form-card iframe { width: 100%; border: none; display: block; }
-    .form-card-note {
-      font-size: 11px; color: var(--grey-mid);
-      text-align: center; margin-top: 16px; line-height: 1.6;
+    .quiz-card-sub {
+      font-size: 13px; color: var(--grey-mid);
+      border-bottom: 1px solid var(--grey); padding-bottom: 16px;
+      margin-bottom: 20px; line-height: 1.5;
     }
 
+    /* Progress bar */
+    .quiz-progress-wrap { margin-bottom: 20px; }
+    .quiz-progress-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 6px;
+    }
+    .quiz-progress-bar {
+      height: 4px; background: var(--lilac-soft); border-radius: 2px; overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%; background: var(--teal-deep); border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    /* Steps */
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-step-q {
+      font-family: Georgia, serif; font-size: 16px; color: var(--dark-teal);
+      margin-bottom: 14px; line-height: 1.4;
+    }
+
+    /* Option buttons */
+    .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+    .quiz-option {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px; border: 1.5px solid var(--grey);
+      background: var(--off-white); cursor: pointer;
+      font-size: 13px; font-weight: 500; color: var(--grey-mid);
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      text-align: left; font-family: 'Montserrat', sans-serif;
+      border-radius: 4px;
+    }
+    .quiz-option:hover { border-color: var(--teal); background: var(--white); color: var(--dark-teal); }
+    .quiz-option.selected {
+      border-color: var(--teal-deep); background: #eaf6f7; color: var(--dark-teal);
+    }
+    .quiz-option input[type="checkbox"],
+    .quiz-option input[type="radio"] { accent-color: var(--teal-deep); width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* Result screen */
+    .quiz-result { display: none; text-align: center; }
+    .quiz-result.active { display: block; min-height: 0; }
+    .quiz-result-icon { font-size: 36px; margin-bottom: 12px; }
+    .quiz-result-headline {
+      font-family: Georgia, serif; font-size: 18px; color: var(--dark-teal);
+      margin-bottom: 10px; line-height: 1.4;
+    }
+    .quiz-result-body {
+      font-size: 13px; color: var(--grey-mid); line-height: 1.7; margin-bottom: 20px;
+    }
+    .quiz-result-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      justify-content: center; margin-bottom: 20px;
+    }
+    .quiz-result-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--soft-purple); color: var(--teal-deep);
+      padding: 5px 12px; border-radius: 100px;
+    }
+
+    /* Form inside quiz */
+    .quiz-contact-form { text-align: left; }
+    .quiz-contact-form iframe { width: 100%; border: none; display: block; }
+
+    /* Nav buttons */
+    .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; gap: 8px; }
+    .quiz-btn-next {
+      background: var(--teal-deep); color: white;
+      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 12px 24px; border: none; cursor: pointer;
+      transition: background 0.2s; flex: 1;
+    }
+    .quiz-btn-next:hover { background: var(--dark-teal); }
+    .quiz-btn-next:disabled { background: var(--grey); cursor: not-allowed; }
+    .quiz-btn-back {
+      background: none; border: none; font-size: 12px; font-weight: 600;
+      color: var(--grey-mid); cursor: pointer; font-family: 'Montserrat', sans-serif;
+      padding: 8px 4px; letter-spacing: 0.05em; text-decoration: underline;
+    }
+    .quiz-btn-back:hover { color: var(--dark-teal); }
+    .quiz-skip {
+      font-size: 11px; color: var(--grey-mid); text-align: center;
+      margin-top: 10px; cursor: pointer; text-decoration: underline;
+    }
+    .quiz-skip:hover { color: var(--teal-deep); }
+    .quiz-card-note {
+      font-size: 11px; color: var(--grey-mid);
+      text-align: center; margin-top: 14px; line-height: 1.6;
+    }
+
+    /* ── TRUST BAR ── */
     .trust-bar { background: var(--soft-purple); padding: 48px 32px; }
     .trust-bar-inner {
       max-width: 1080px; margin: 0 auto;
@@ -193,6 +271,7 @@
     }
     .trust-card p { font-size: 12px; font-weight: 400; color: var(--grey-mid); line-height: 1.5; }
 
+    /* ── FOUNDER ── */
     .founder { background: var(--white); padding: 88px 32px; }
     .founder-inner {
       max-width: 1080px; margin: 0 auto;
@@ -201,16 +280,6 @@
     }
     .founder-photo-wrap { position: relative; }
     .founder-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
-    .founder-photo-placeholder {
-      width: 100%; aspect-ratio: 4/5;
-      background: linear-gradient(135deg, var(--soft-purple) 0%, var(--lilac-soft) 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 8px;
-    }
-    .founder-photo-placeholder span {
-      font-size: 13px; font-weight: 500;
-      color: var(--teal-deep); letter-spacing: 0.05em;
-    }
     .founder-photo-accent {
       position: absolute; bottom: -20px; right: -20px;
       width: 120px; height: 120px; background: var(--dark-teal);
@@ -245,6 +314,7 @@
       display: block; font-weight: 700; color: var(--dark-teal); margin-bottom: 2px;
     }
 
+    /* ── SERVICES ── */
     .services { background: var(--off-white); padding: 88px 32px; }
     .services-inner { max-width: 1080px; margin: 0 auto; }
     .services-header { text-align: center; margin-bottom: 56px; }
@@ -287,6 +357,7 @@
       content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px;
     }
 
+    /* ── COMPARISON ── */
     .comparison { background: var(--charcoal); padding: 88px 32px; }
     .comparison-inner { max-width: 920px; margin: 0 auto; }
     .vs-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -313,6 +384,7 @@
     .vs-table tbody td:nth-child(2) { text-align: center; color: rgba(255,255,255,0.55); }
     .vs-table tbody td:nth-child(3) { text-align: center; color: var(--teal-light); font-weight: 600; }
 
+    /* ── PROVIDERS ── */
     .provider-section { background: var(--white); padding: 88px 32px; }
     .provider-inner { max-width: 1080px; margin: 0 auto; }
     .provider-header { text-align: center; margin-bottom: 64px; }
@@ -324,15 +396,6 @@
       background: var(--off-white); border-top: 3px solid var(--teal-deep);
     }
     .provider-photo { width: 180px; height: 220px; object-fit: cover; }
-    .provider-photo-placeholder {
-      width: 180px; height: 220px;
-      background: linear-gradient(160deg, var(--soft-purple), var(--lilac-soft));
-      display: flex; align-items: center; justify-content: center;
-    }
-    .provider-photo-placeholder span {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
-      color: var(--teal-deep); text-align: center; padding: 8px;
-    }
     .provider-eyebrow {
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--teal); margin-bottom: 6px;
@@ -345,11 +408,10 @@
     .provider-bio { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--grey-mid); }
     .provider-cta { margin-top: 20px; }
 
+    /* ── FAQ ── */
     .faq-section { background: var(--soft-purple); padding: 88px 32px; }
     .faq-inner {
       max-width: 1080px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 420px;
-      gap: 64px; align-items: start;
     }
     .faq-header { margin-bottom: 40px; }
     .faq-header h2 { font-size: clamp(28px, 3vw, 38px); }
@@ -375,6 +437,22 @@
     }
     .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
 
+    .form-card {
+      background: var(--white); border-top: 4px solid var(--teal-deep);
+      padding: 48px 48px 40px; box-shadow: 0 4px 32px rgba(15,74,93,0.1);
+      margin-top: 56px;
+    }
+    .form-card-title {
+      font-family: Georgia, serif; font-size: 28px; color: var(--dark-teal); margin-bottom: 6px; text-align: center;
+    }
+    .form-card-sub {
+      font-size: 14px; color: var(--grey-mid); text-align: center;
+      border-bottom: 1px solid var(--grey); padding-bottom: 20px; margin-bottom: 0; line-height: 1.5; max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+    .form-card iframe { width: 100%; border: none; display: block; }
+    .form-card-note { font-size: 11px; color: var(--grey-mid); text-align: center; margin-top: 16px; line-height: 1.6; }
+
+    /* ── MISC ── */
     .cash-pay { background: var(--soft-purple); padding: 48px 32px; text-align: center; }
     .cash-pay-inner { max-width: 640px; margin: 0 auto; }
     .cash-pay h3 { color: var(--dark-teal); font-size: 22px; margin-bottom: 12px; }
@@ -388,16 +466,11 @@
     .crosssell-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
     .a11y-bar { background: var(--charcoal); padding: 16px 32px; text-align: center; }
-    .a11y-bar p {
-      font-size: 12px; color: rgba(255,255,255,0.78);
-      max-width: 900px; margin: 0 auto; line-height: 1.6;
-    }
+    .a11y-bar p { font-size: 12px; color: rgba(255,255,255,0.78); max-width: 900px; margin: 0 auto; line-height: 1.6; }
 
     footer { background: var(--dark-teal); padding: 40px 32px 32px; text-align: center; }
     .footer-logo-wrap { margin-bottom: 12px; }
-    .footer-logo-wrap a { display: inline-block; text-decoration: none; }
     .footer-logo-img { height: 36px; width: auto; display: block; margin: 0 auto; mix-blend-mode: screen; opacity: 0.92; }
-    .footer-logo-fallback { display: block; font-family: Georgia, serif; font-size: 22px; color: var(--white); font-style: italic; text-decoration: none; }
     .footer-tagline { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 20px; }
     .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
     .footer-links a { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
@@ -415,7 +488,7 @@
 
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-inner .form-card { order: -1; }
+      .hero-inner .quiz-card { order: 2; }
       .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
       .trust-bar-inner .trust-card:last-child { grid-column: 1 / -1; }
       .founder-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -423,7 +496,7 @@
       .services-grid { grid-template-columns: 1fr; }
       .providers-grid { grid-template-columns: 1fr; }
       .provider-card { grid-template-columns: 140px 1fr; }
-      .faq-inner { grid-template-columns: 1fr; }
+      .faq-inner { max-width: 100%; }
       .mobile-sticky { display: flex; }
       body { padding-bottom: 80px; }
       nav { padding: 0 20px; }
@@ -436,7 +509,7 @@
       .trust-bar-inner { grid-template-columns: 1fr; }
       .trust-bar-inner .trust-card:last-child { grid-column: auto; }
       .provider-card { grid-template-columns: 1fr; }
-      .provider-photo-placeholder, .provider-photo { width: 100%; height: 200px; }
+      .provider-photo { width: 100%; height: 200px; }
     }
   </style>
 </head>
@@ -446,28 +519,29 @@
 
   <nav role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="https://www.som.md" class="nav-logo-link" aria-label="SOM Aesthetics — return to homepage">
-        <img src="images/som-logo.jpg" alt="SOM Aesthetics" class="nav-logo-img" height="40" />
+      <a href="https://www.som.md" aria-label="SOM Aesthetics — return to homepage">
+        <img src="images/som-logo.jpg" alt="SOM Aesthetics" height="40" />
       </a>
       <div class="nav-right">
-        <a href="tel:7607667546" class="nav-phone" aria-label="Call us at 760-766-7546">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:5px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.5 2 2 0 0 1 3.57 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>760-766-7546
+        <a href="tel:7607667546" class="nav-phone" aria-label="Call us at (760) SOM-SKIN">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:5px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.5 2 2 0 0 1 3.57 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(760) SOM-SKIN
         </a>
-        <a href="https://link.som.md/womenshealth" class="btn-primary" target="_blank" rel="noopener" onclick="gtag('event','womenshealth_nav_book_click')">Book $99 Consult</a>
+        <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="btn-primary" onclick="gtag('event','womenshealth_nav_book_click')">Book $99 Consult</a>
       </div>
     </div>
   </nav>
 
   <main id="main-content">
 
+    <!-- ── HERO ── -->
     <section class="hero" id="book-hero" aria-labelledby="hero-heading">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="hero-eyebrow">— Women's Health · Encinitas · San Diego, CA</p>
+          <p class="hero-eyebrow">— Hormone Optimization · Encinitas · San Diego, CA</p>
           <h1 id="hero-heading">Feel like <em>yourself</em> again.</h1>
-          <p class="hero-sub">Your labs say "normal." But you don't feel normal. Physician-led hormone therapy, peptides, longevity medicine, and medical weight management — designed for women who deserve more than a 15-minute appointment.</p>
+          <p class="hero-sub">You know your body. Something has shifted, and you're right. Concierge hormone optimization and longevity medicine for women who want real answers, not a 15-minute brush-off.</p>
           <div class="hero-pills">
-            <a href="#hrt" class="hero-pill">Hormone Therapy</a>
+            <a href="#hrt" class="hero-pill">Hormone Optimization</a>
             <a href="#peptides" class="hero-pill">Peptides</a>
             <a href="#weight" class="hero-pill">Weight Management</a>
             <a href="#longevity" class="hero-pill">Longevity Medicine</a>
@@ -476,40 +550,122 @@
             <div class="price">$99</div>
             <div class="price-label">
               Women's Health Consultation<br>
-              <span style="color: rgba(255,255,255,0.5); font-size: 10px;">Same-week appointments · Cash pay</span>
+              <span style="color:rgba(255,255,255,0.5);font-size:10px;">Same-week appointments · Cash pay</span>
             </div>
           </div>
-          <div style="margin-top: 24px;">
-            <a href="https://link.som.md/womenshealth" class="btn-primary" target="_blank" rel="noopener" onclick="gtag('event','womenshealth_hero_copy_book_click')" style="font-size:13px; padding:16px 32px; letter-spacing:0.1em;" aria-label="Book your $99 Women's Health Consultation">Book Your $99 Consult →</a>
-            <p style="margin-top:12px; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6);">Same-week appointments available</p>
+          <div style="margin-top:24px;">
+            <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="btn-primary" style="font-size:13px;padding:16px 32px;letter-spacing:0.1em;" onclick="gtag('event','womenshealth_hero_copy_book_click')">Book a Consultation →</a>
+            <p style="margin-top:12px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.6);">Takes 60 seconds · Same-week appointments available</p>
           </div>
         </div>
 
-        <div class="hero-form">
-          <div class="form-card">
-            <p class="form-card-title">Book Your $99 Consult</p>
-            <p class="form-card-sub">Same-week appointments available. Tell us what's going on — we'll take it from there.</p>
-            <iframe src="https://app.prospyrmed.com/leadform/9ae70f9d-8d2c-4fa2-b419-709b11817337" width="100%" height="600" frameborder="0" style="border:none; display:block;" title="Wellness consultation booking form" aria-label="Book your $99 wellness consultation" loading="lazy"></iframe>
-            <p class="form-card-note">Cash pay only · No insurance<br>Questions? Call <a href="tel:7607667546" style="color:var(--teal-deep);" aria-label="Call SOM Aesthetics at 760-766-7546">760-766-7546</a></p>
+        <!-- ── SYMPTOM QUIZ ── -->
+        <div class="quiz-card" id="quiz" aria-label="Symptom quiz">
+          <p class="quiz-card-title">Tell us your symptoms.</p>
+          <p class="quiz-card-sub">We'll show you the path forward.</p>
+
+          <div class="quiz-progress-wrap">
+            <div class="quiz-progress-label" id="quiz-progress-label">Step 1 of 4</div>
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width:25%"></div></div>
           </div>
+
+          <!-- Step 1: Symptoms -->
+          <div class="quiz-step active" id="step-1">
+            <p class="quiz-step-q">Which of these sound familiar? <span style="font-size:12px;font-weight:400;color:var(--grey-mid);">(select all that apply)</span></p>
+            <div class="quiz-options" role="group" aria-label="Symptom options">
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Fatigue or low energy"> Fatigue or low energy</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Brain fog or memory issues"> Brain fog or memory issues</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Poor sleep or night sweats"> Poor sleep or night sweats</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Mood changes or anxiety"> Mood changes or anxiety</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Low libido"> Low libido</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Weight gain (especially belly)"> Weight gain (especially belly)</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Hair thinning"> Hair thinning</label>
+              <label class="quiz-option"><input type="checkbox" name="symptoms" value="Hot flashes"> Hot flashes</label>
+            </div>
+            <div class="quiz-nav">
+              <button class="quiz-btn-next" id="btn-next-1" onclick="quizNext(2)">Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Hormone journey -->
+          <div class="quiz-step" id="step-2">
+            <p class="quiz-step-q">Where are you in your hormone health journey?</p>
+            <div class="quiz-options" role="group" aria-label="Hormonal stage options">
+              <label class="quiz-option"><input type="radio" name="stage" value="Perimenopause symptoms but not sure"> I have symptoms but I'm not sure if it's perimenopause</label>
+              <label class="quiz-option"><input type="radio" name="stage" value="In perimenopause"> I'm in perimenopause</label>
+              <label class="quiz-option"><input type="radio" name="stage" value="Post-menopause"> Post-menopause</label>
+              <label class="quiz-option"><input type="radio" name="stage" value="Just don't feel like myself"> I just don't feel like myself and want answers</label>
+            </div>
+            <div class="quiz-nav">
+              <button class="quiz-btn-back" onclick="quizBack(1)">← Back</button>
+              <button class="quiz-btn-next" id="btn-next-2" onclick="quizNext(3)" disabled>Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Labs -->
+          <div class="quiz-step" id="step-3">
+            <p class="quiz-step-q">Do you have recent hormone labs?</p>
+            <div class="quiz-options" role="group" aria-label="Lab status options">
+              <label class="quiz-option"><input type="radio" name="labs" value="Yes, I have recent labs"> Yes — I have recent results I can share</label>
+              <label class="quiz-option"><input type="radio" name="labs" value="No, need labs ordered"> No — I'd need labs ordered</label>
+              <label class="quiz-option"><input type="radio" name="labs" value="Not sure"> I'm not sure what I have</label>
+            </div>
+            <div class="quiz-nav">
+              <button class="quiz-btn-back" onclick="quizBack(2)">← Back</button>
+              <button class="quiz-btn-next" id="btn-next-3" onclick="quizNext(4)" disabled>Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact info -->
+          <div class="quiz-step" id="step-4">
+            <p class="quiz-step-q">Last step — how should we reach you?</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+              <input type="text" id="contact-first" placeholder="First name" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
+              <input type="text" id="contact-last" placeholder="Last name" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
+              <input type="email" id="contact-email" placeholder="Email address" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
+              <input type="tel" id="contact-phone" placeholder="Phone number" style="padding:11px 14px;border:1.5px solid var(--grey);border-radius:4px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--charcoal);background:var(--off-white);width:100%;" />
+              <p id="contact-error" style="display:none;font-size:12px;color:#c0392b;margin-top:2px;">Please fill in your name, email, and phone so we can reach you.</p>
+            </div>
+            <div class="quiz-nav" style="margin-top:16px;">
+              <button class="quiz-btn-back" onclick="quizBack(3)">← Back</button>
+              <button class="quiz-btn-next" id="btn-submit" onclick="quizSubmit()">See My Results & Book →</button>
+            </div>
+          </div>
+
+          <!-- Result screen -->
+          <div class="quiz-result" id="quiz-result">
+            <div class="quiz-result-icon">✦</div>
+            <p class="quiz-result-headline" id="result-headline">Based on your symptoms, hormone optimization is a strong starting point.</p>
+            <p class="quiz-result-body" id="result-body">Book your $99 consult at SOM Aesthetics, which will include a full comprehensive hormone lab assessment and a personalized care plan. Same-week appointments available. No labs needed before your visit — we'll order what's relevant.</p>
+            <div class="quiz-result-tags" id="result-tags"></div>
+            <div style="margin-top:20px;">
+              <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="quiz-btn-next" style="display:block;text-align:center;text-decoration:none;padding:14px 24px;" onclick="gtag('event','womenshealth_quiz_book_click')">Book Your $99 Consult →</a>
+            </div>
+            <p style="font-size:11px;color:var(--grey-mid);text-align:center;margin-top:16px;">We'll be in touch shortly. Questions? Call <a href="tel:7607667546" style="color:var(--teal-deep);">(760) SOM-SKIN</a></p>
+            <p style="font-size:11px;color:var(--grey-mid);text-align:center;margin-top:8px;"><button onclick="quizRestart()" style="background:none;border:none;font-size:11px;color:var(--grey-mid);cursor:pointer;text-decoration:underline;font-family:'Montserrat',sans-serif;">Start over</button></p>
+          </div>
+
+          <p class="quiz-card-note" id="quiz-card-note">Cash pay only · No insurance<br>Questions? Call <a href="tel:7607667546" style="color:var(--teal-deep);">(760) SOM-SKIN</a></p>
         </div>
       </div>
     </section>
 
+    <!-- ── TRUST BAR ── -->
     <section class="trust-bar" aria-label="Why choose SOM Aesthetics">
       <div class="trust-bar-inner">
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>PhD-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">✦</span><strong>Concierge Access</strong><p>Direct line to your provider. No phone trees, no waiting rooms</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">👩‍⚕️</span><strong>Physician-Led</strong><p>Board-certified provider. Same face every visit, no hand-offs</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">📅</span><strong>Same-Week Appts</strong><p>Skip the 6-month waitlist. We have time for you, this week</p></div>
+        <div class="trust-card"><span class="trust-icon" aria-hidden="true">🔬</span><strong>PhD-Founded</strong><p>Built on decades of longevity research — not trend-chasing</p></div>
         <div class="trust-card"><span class="trust-icon" aria-hidden="true">🧬</span><strong>Decades of Research</strong><p>Longevity and metabolism science since 2006 — applied to your care</p></div>
-        <div class="trust-card"><span class="trust-icon" aria-hidden="true">✦</span><strong>Concierge Access</strong><p>Direct line to your provider. No phone trees, no waiting rooms</p></div>
       </div>
     </section>
 
+    <!-- ── FOUNDER ── -->
     <section class="founder" aria-labelledby="founder-heading">
       <div class="founder-inner">
         <div class="founder-photo-wrap">
-          <img src="https://cdn.prod.website-files.com/674f6f9176b9f882c1c365bf/67d0e1a3ee1ac59454f9ac51_jess-primary-02.avif" alt="Jessica Shisler, PhD — Co-Founder & Chief Research Officer, SOM Aesthetics" class="founder-photo" style="object-position: center 20%;" />
+          <img src="images/jess.jpg" alt="Jessica Shisler, PhD — Co-Founder & Chief Research Officer, SOM Aesthetics" class="founder-photo" style="object-position:center 20%;" />
           <div class="founder-photo-accent" aria-hidden="true">
             <strong>PhD</strong>
             <span>Biochemistry<br>& Longevity</span>
@@ -530,6 +686,7 @@
       </div>
     </section>
 
+    <!-- ── SERVICES ── -->
     <section class="services" aria-labelledby="services-heading" id="services">
       <div class="services-inner">
         <div class="services-header">
@@ -540,22 +697,22 @@
         <div class="services-grid">
           <div class="service-card" id="hrt">
             <span class="service-num" aria-hidden="true">01</span>
-            <h3>Hormone Replacement Therapy</h3>
+            <h3>Hormone Optimization Therapy</h3>
             <span class="service-tag">HRT · BHRT · Perimenopause & Menopause</span>
-            <p>Hormonal shifts don't just cause hot flashes. Brain fog, low libido, weight gain, mood swings, disrupted sleep — these are real symptoms with real solutions. We use bioidentical hormones and comprehensive lab panels to restore your baseline.</p>
-            <ul class="service-bullets" aria-label="HRT includes">
+            <p>Hormonal shifts don't just cause hot flashes. Brain fog, low libido, weight gain, mood swings, disrupted sleep: these are real symptoms with real solutions. We use bioidentical hormones and comprehensive lab panels to optimize your hormone levels and restore how you feel.</p>
+            <ul class="service-bullets" aria-label="Hormone optimization includes">
               <li>Comprehensive hormone panel & symptom review</li>
               <li>Bioidentical estrogen, progesterone & testosterone</li>
               <li>Perimenopause & surgical menopause support</li>
               <li>Thyroid co-management when indicated</li>
-              <li>Ongoing monitoring & dose optimization</li>
+              <li>Ongoing monitoring & hormone optimization</li>
             </ul>
           </div>
           <div class="service-card" id="peptides">
             <span class="service-num" aria-hidden="true">02</span>
             <h3>Peptide Therapy</h3>
             <span class="service-tag">Longevity · Body Composition · Recovery</span>
-            <p>Peptides are short amino acid sequences that signal your body to do exactly what you need — repair, recover, recompose. From cellular repair to improved sleep, growth hormone optimization to inflammation reduction, we match the protocol to your biology.</p>
+            <p>Peptides are short amino acid sequences that signal your body to do exactly what you need: repair, recover, recompose. From cellular repair to improved sleep, growth hormone support to inflammation reduction, we match the protocol to your biology.</p>
             <ul class="service-bullets" aria-label="Peptide therapy includes">
               <li>BPC-157, TB-500 for tissue repair & recovery</li>
               <li>CJC-1295 / Ipamorelin for growth hormone support</li>
@@ -568,7 +725,7 @@
             <span class="service-num" aria-hidden="true">03</span>
             <h3>Longevity Medicine</h3>
             <span class="service-tag">Preventive Health · Metabolic Optimization · Aging Well</span>
-            <p>Longevity isn't about living forever — it's about thriving in the years you have. We combine advanced diagnostics with the latest research in metabolic health, inflammation, and cellular aging to build a proactive health strategy.</p>
+            <p>Longevity isn't about living forever. It's about thriving in the years you have. We combine advanced diagnostics with the latest research in metabolic health, inflammation, and cellular aging to build a proactive health strategy.</p>
             <ul class="service-bullets" aria-label="Longevity medicine includes">
               <li>Advanced metabolic & inflammatory biomarkers</li>
               <li>Biological age assessment</li>
@@ -581,7 +738,7 @@
             <span class="service-num" aria-hidden="true">04</span>
             <h3>Medical Weight Management</h3>
             <span class="service-tag">GLP-1s · Metabolic Reset · Body Composition</span>
-            <p>Weight gain after 35 isn't a willpower problem. It's biology. Shifting hormones, slowing metabolism, and insulin resistance create a stacked deck. We address the root cause with evidence-based tools — including GLP-1 therapy where appropriate — and a plan built around your body.</p>
+            <p>Weight gain after 35 isn't a willpower problem. It's biology. Shifting hormones, slowing metabolism, and insulin resistance create a stacked deck. We address the root cause with evidence-based tools, including GLP-1 therapy where appropriate, and a plan built around your body.</p>
             <ul class="service-bullets" aria-label="Weight management includes">
               <li>GLP-1 / GIP agonists (Semaglutide, Tirzepatide)</li>
               <li>Metabolic panel & body composition analysis</li>
@@ -594,35 +751,36 @@
       </div>
     </section>
 
+    <!-- ── COMPARISON ── -->
     <section class="comparison" aria-labelledby="comparison-heading">
       <div class="comparison-inner">
-        <p class="section-eyebrow" style="text-align:center; color: var(--teal-light); margin-bottom: 12px;">— The SOM Difference</p>
+        <p class="section-eyebrow" style="text-align:center;color:var(--teal-light);margin-bottom:12px;">— The SOM Difference</p>
         <h2 id="comparison-heading">Not your average women's health visit.</h2>
         <p class="comparison-sub">We've heard the stories. You deserve better.</p>
         <div class="vs-table-wrap">
-        <table class="vs-table" role="table" aria-label="Comparison of SOM Aesthetics vs traditional healthcare">
-          <thead>
-            <tr>
-              <th scope="col">What you're comparing</th>
-              <th scope="col">Traditional healthcare</th>
-              <th scope="col">SOM Aesthetics</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Time to appointment</td><td>4–6 months</td><td>Same week</td></tr>
-            <tr><td>Consultation length</td><td>12–15 minutes</td><td>Extended, unhurried visits</td></tr>
-            <tr><td>Hormone approach</td><td>"Your labs are normal"</td><td>Comprehensive panels + symptoms</td></tr>
-            <tr><td>Weight management</td><td>Eat less, move more</td><td>Root-cause metabolic protocol</td></tr>
-            <tr><td>Provider continuity</td><td>Different doctor each visit</td><td>Same provider, every time</td></tr>
-            <tr><td>Access between visits</td><td>Phone tree → nurse → portal</td><td>Direct provider access</td></tr>
-            <tr><td>Longevity & peptides</td><td>Not offered</td><td>PhD-backed, research-informed</td></tr>
-          </tbody>
-        </table>
+          <table class="vs-table" role="table" aria-label="Comparison of SOM Aesthetics vs traditional healthcare">
+            <thead>
+              <tr>
+                <th scope="col">What you're comparing</th>
+                <th scope="col">Traditional healthcare</th>
+                <th scope="col">SOM Aesthetics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Time to appointment</td><td>4–6 months</td><td>Same week</td></tr>
+              <tr><td>Consultation length</td><td>12–15 minutes</td><td>Extended, unhurried visits</td></tr>
+              <tr><td>Hormone approach</td><td>"Your labs are normal"</td><td>Comprehensive panels + symptoms</td></tr>
+              <tr><td>Weight management</td><td>Eat less, move more</td><td>Root-cause metabolic protocol</td></tr>
+              <tr><td>Provider continuity</td><td>Different doctor each visit</td><td>Same provider, every time</td></tr>
+              <tr><td>Access between visits</td><td>Phone tree → nurse → portal</td><td>Direct provider access</td></tr>
+              <tr><td>Longevity & peptides</td><td>Not offered</td><td>PhD-backed, research-informed</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- PROVIDERS — grid bug fixed: both cards now correctly inside .providers-grid -->
+    <!-- ── PROVIDERS ── -->
     <section class="provider-section" aria-labelledby="providers-heading" id="providers">
       <div class="provider-inner">
         <div class="provider-header">
@@ -630,22 +788,20 @@
           <h2 id="providers-heading">Expertise you can <em>trust.</em></h2>
         </div>
         <div class="providers-grid">
-
           <div class="provider-card">
-            <img src="images/neenah.jpg" alt="Neenah Grade, PA-C" class="provider-photo" style="object-position: center top;" />
+            <img src="images/neenah.jpg" alt="Neenah Grade, PA-C" class="provider-photo" style="object-position:center top;" />
             <div>
               <p class="provider-eyebrow">Wellness & Integrative Medicine</p>
               <h3>Neenah Grade, PA-C</h3>
               <p class="provider-title">Board-Certified Physician Assistant</p>
               <p class="provider-bio">Neenah has spent 10+ years in integrative medicine, wellness, and dermatology — with a particular focus on the hormonal and metabolic shifts that shape how women feel as they age. She approaches every patient as a whole person: hormones, skin, energy, mood, and weight are all connected, and she treats them that way. Same provider every visit, no hand-offs, no rushing.</p>
               <div class="provider-cta">
-                <a href="https://link.som.md/womenshealth" class="btn-primary" target="_blank" rel="noopener" onclick="gtag('event','womenshealth_neenah_book_click')">Book with Neenah →</a>
+                <a href="#quiz" class="btn-primary" onclick="gtag('event','womenshealth_neenah_book_click')">Book with Neenah →</a>
               </div>
             </div>
           </div>
-
           <div class="provider-card">
-            <img src="https://cdn.prod.website-files.com/674f6f9176b9f882c1c365bf/67cf48b5188f5ebc924a1551_dr-saami-primary.avif" alt="Dr. Saami Khalifian, MD" class="provider-photo" style="object-position: center top;" />
+            <img src="https://cdn.prod.website-files.com/674f6f9176b9f882c1c365bf/67cf48b5188f5ebc924a1551_dr-saami-primary.avif" alt="Dr. Saami Khalifian, MD" class="provider-photo" style="object-position:center top;" />
             <div>
               <p class="provider-eyebrow">Supervising Physician</p>
               <h3>Dr. Saami Khalifian, MD</h3>
@@ -653,11 +809,11 @@
               <p class="provider-bio">Board-certified dermatologist and co-founder of SOM Aesthetics. Dr. Khalifian brings the physician-level oversight, research infrastructure, and clinical vision that underpins everything we do — including our wellness program. His leadership ensures every protocol is held to the same rigorous, science-first standard as our dermatology care.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
+    <!-- ── CASH PAY ── -->
     <div class="cash-pay" role="note" aria-label="Payment information">
       <div class="cash-pay-inner">
         <h3>Cash pay · No insurance.</h3>
@@ -665,60 +821,58 @@
       </div>
     </div>
 
+    <!-- ── CROSS-SELL ── -->
     <section class="crosssell" aria-labelledby="crosssell-heading">
       <div class="crosssell-inner">
         <p class="section-eyebrow" style="color:var(--teal-light);">— While You're Here</p>
         <h2 id="crosssell-heading" style="color:var(--white);">SOM is more than <em>wellness.</em></h2>
         <p>Our physician-led practice also offers concierge dermatology, medical aesthetics, injectables, and skin health — all under one roof. Same concierge model, same team.</p>
         <div class="crosssell-buttons">
-          <a href="https://www.som.md?utm_source=womenshealth-thankyou&utm_medium=referral&utm_campaign=womenshealth-apr26" class="btn-primary" onclick="gtag('event','womenshealth_thankyou_explore_som_click')" aria-label="Explore all SOM Aesthetics services">Explore SOM Aesthetics →</a>
-          <a href="https://skincheck.som-aesthetics.com?utm_source=womenshealth-thankyou&utm_medium=referral&utm_campaign=womenshealth-apr26" style="color:var(--teal-light); border:2px solid var(--teal-light); padding:11px 24px; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; display:inline-block; transition:background 0.2s, color 0.2s;" onmouseover="this.style.background='rgba(126,207,213,0.12)'" onmouseout="this.style.background='transparent'" onclick="gtag('event','womenshealth_thankyou_skincheck_click')" aria-label="Learn about the $99 skin check offer">$99 Skin Check →</a>
+          <a href="https://www.som.md?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" class="btn-primary" onclick="gtag('event','womenshealth_explore_som_click')">Explore SOM Aesthetics →</a>
+          <a href="https://skincheck.som-aesthetics.com?utm_source=womenshealth-landing&utm_medium=referral&utm_campaign=womenshealth-apr26" style="color:var(--teal-light);border:2px solid var(--teal-light);padding:11px 24px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;" onclick="gtag('event','womenshealth_skincheck_click')">$99 Skin Check →</a>
         </div>
       </div>
     </section>
 
+    <!-- ── FAQ + FORM ── -->
     <section class="faq-section" aria-labelledby="faq-heading" id="book">
       <div class="faq-inner">
-        <div class="faq-col">
-          <div class="faq-header">
-            <p class="section-eyebrow">— Common Questions</p>
-            <h2 id="faq-heading">Frequently <em>asked.</em></h2>
+        <div class="faq-header">
+          <p class="section-eyebrow">Common Questions</p>
+          <h2 id="faq-heading">Frequently <em>asked.</em></h2>
+        </div>
+        <div class="faq-list" role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">What's included in the $99 wellness consultation?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Your $99 consultation includes a comprehensive intake covering your symptoms, health history, and goals; a review of any existing labs or the ordering of a targeted panel; a personalized care plan with recommended treatments; and a full walkthrough of pricing for any ongoing programs. No upsells, no surprises.</div>
           </div>
-          <div class="faq-list" role="list">
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">What's included in the $99 wellness consultation?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Your $99 consultation includes a comprehensive intake covering your symptoms, health history, and goals; a review of any existing labs or the ordering of a targeted panel; a personalized care plan with recommended treatments; and a full walkthrough of pricing for any ongoing programs. No upsells, no surprises.</div>
-            </div>
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Am I a candidate for hormone therapy?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Most women in their 30s, 40s, and 50s experiencing symptoms like fatigue, brain fog, irregular cycles, low libido, weight changes, or mood shifts are candidates for evaluation. We don't make that determination until we've seen your full lab picture. The consultation is the first step.</div>
-            </div>
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">How quickly can I get started?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Same-week appointments are typically available. After booking, you'll receive intake forms to complete before your visit. Many patients leave their first appointment with a labs order and a clear plan in hand.</div>
-            </div>
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Are GLP-1s (semaglutide, tirzepatide) available here?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Yes. We offer medical weight management including GLP-1 receptor agonists where clinically appropriate. We don't prescribe without a full evaluation — we want to make sure the approach fits your specific metabolic picture and health goals.</div>
-            </div>
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Do you offer peptides for men as well?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Yes — while our wellness program is anchored in women's health, peptide therapy and longevity medicine are available to all patients. Call us to discuss what's right for your goals.</div>
-            </div>
-            <div class="faq-item" role="listitem">
-              <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Why cash pay? What does it actually cost after the consult?<span class="faq-chevron" aria-hidden="true">+</span></button>
-              <div class="faq-answer">Cash pay means we answer to you, not to an insurance protocol. Ongoing program pricing varies based on your plan — we provide full transparency at your consultation so there are never surprises. Many patients find the concierge model more cost-effective than a fragmented insurance-based experience.</div>
-            </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Am I a candidate for hormone optimization therapy?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Most women in their 30s, 40s, and 50s experiencing symptoms like fatigue, brain fog, irregular cycles, low libido, weight changes, or mood shifts are candidates for evaluation. We don't make that determination until we've seen your full lab picture. The consultation is the first step.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">How quickly can I get started?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Same-week appointments are typically available. After booking, you'll receive intake forms to complete before your visit. Many patients leave their first appointment with a labs order and a clear plan in hand.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Are GLP-1s (semaglutide, tirzepatide) available here?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Yes. We offer medical weight management including GLP-1 receptor agonists where clinically appropriate. We don't prescribe without a full evaluation. We want to make sure the approach fits your specific metabolic picture and health goals.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Do you offer peptides for men as well?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Yes. While our wellness program is anchored in women's health, peptide therapy and longevity medicine are available to all patients. Call us to discuss what's right for your goals.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Why cash pay? What does it actually cost after the consult?<span class="faq-chevron" aria-hidden="true">+</span></button>
+            <div class="faq-answer">Cash pay means we answer to you, not to an insurance protocol. Ongoing program pricing varies based on your plan. We provide full transparency at your consultation so there are never surprises. Many patients find the concierge model more cost-effective than a fragmented insurance-based experience.</div>
           </div>
         </div>
 
-        <div class="faq-form">
-          <div class="form-card">
-            <p class="form-card-title">Ready to feel better?</p>
-            <p class="form-card-sub">Book your $99 wellness consultation. Same-week appointments available in Encinitas.</p>
-            <iframe src="https://app.prospyrmed.com/leadform/9ae70f9d-8d2c-4fa2-b419-709b11817337" width="100%" height="600" frameborder="0" style="border:none; display:block;" title="Wellness consultation booking form" aria-label="Book your $99 wellness consultation" loading="lazy"></iframe>
-            <p class="form-card-note">Cash pay only · No insurance<br>25 East E Street, Encinitas, CA 92024<br><a href="tel:7607667546" style="color:var(--teal-deep);" aria-label="Call SOM Aesthetics at 760-766-7546">760-766-7546</a></p>
-          </div>
+        <div class="form-card">
+          <p class="form-card-title">Ready to feel better?</p>
+          <p class="form-card-sub">Book your $99 wellness consultation. Same-week appointments available in Encinitas.</p>
+          <iframe src="https://app.prospyrmed.com/leadform/9ae70f9d-8d2c-4fa2-b419-709b11817337" width="100%" height="560" frameborder="0" style="border:none;display:block;margin-top:24px;" title="Wellness consultation booking form" loading="lazy"></iframe>
+          <p class="form-card-note">Cash pay only · No insurance<br>25 East E Street, Encinitas, CA 92024<br><a href="tel:7607667546" style="color:var(--teal-deep);">(760) SOM-SKIN</a></p>
         </div>
       </div>
     </section>
@@ -726,7 +880,7 @@
   </main>
 
   <div class="a11y-bar" role="contentinfo" aria-label="Accessibility statement">
-    <p>SOM Aesthetics is committed to digital accessibility. This page is designed to meet WCAG 2.1 AA standards. If you experience any accessibility barriers, please call us at <a href="tel:7607667546" style="color:rgba(255,255,255,0.85);">760-766-7546</a> and we will assist you.</p>
+    <p>SOM Aesthetics is committed to digital accessibility. This page is designed to meet WCAG 2.1 AA standards. If you experience any accessibility barriers, please call us at <a href="tel:7607667546" style="color:rgba(255,255,255,0.85);">(760) SOM-SKIN</a> and we will assist you.</p>
   </div>
 
   <footer>
@@ -741,7 +895,7 @@
       <a href="https://www.som.md/privacy-policy">Privacy Policy</a>
       <a href="https://www.som.md/terms">Terms</a>
       <a href="https://skincheck.som-aesthetics.com">$99 Skin Check</a>
-      <a href="tel:7607667546">760-766-7546</a>
+      <a href="tel:7607667546">(760) SOM-SKIN</a>
     </nav>
     <p class="footer-bottom">
       © 2026 SOM Aesthetics LLC · 25 East E Street, Encinitas, CA 92024<br>
@@ -755,14 +909,202 @@
       <strong>$99 Women's Health Consult</strong>
       Same-week appointments available
     </div>
-    <a href="https://link.som.md/womenshealth" class="btn-primary" target="_blank" rel="noopener" style="white-space:nowrap; font-size:11px;" onclick="gtag('event','womenshealth_mobile_sticky_click')">Book Now</a>
+    <a href="https://link.som.md/hormoneoptimization_lp" target="_blank" class="btn-primary" style="white-space:nowrap;font-size:11px;" onclick="gtag('event','womenshealth_mobile_sticky_click')">Book Now</a>
   </div>
 
   <script>
+    /* ── QUIZ LOGIC ── */
+    var PROSPYR_URL   = 'https://inn.gs/e/hrs7QRa0s7Vm2Q9ZjH50uCAupctGAzKdw7VStiseWR70dEgwMOvny87weA7iRpGMSC39Xunh1xTz3SgjUXUalw';
+    var PROSPYR_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3b3Jrc3BhY2VJZCI6IjVmZjgzZTE5LTIyYjEtNDNlNy05NTA4LTYwNGM4NmI5OWI5ZCIsInZlbmRvciI6IkludGVybmFsIiwiaWF0IjoxNzgyMTYxMzgyfQ.J_FMb-cZHgFPiXtp4shGgCmxA_Y0mbLZasOkNVwYsmU';
+
+    var TOTAL_STEPS = 4;
+    var quizAnswers = { symptoms: [], stage: '', labs: '', firstName: '', lastName: '', email: '', phone: '' };
+
+    function quizNext(step) {
+      document.getElementById('step-' + (step - 1)).classList.remove('active');
+      document.getElementById('step-' + step).classList.add('active');
+      updateProgress(step);
+      wireRadios(step);
+    }
+
+    function quizBack(step) {
+      document.getElementById('step-' + (step + 1)).classList.remove('active');
+      document.getElementById('step-' + step).classList.add('active');
+      updateProgress(step);
+    }
+
+    function updateProgress(step) {
+      var pct = Math.round((step / TOTAL_STEPS) * 100);
+      document.getElementById('quiz-progress-fill').style.width = pct + '%';
+      document.getElementById('quiz-progress-label').textContent = 'Step ' + step + ' of ' + TOTAL_STEPS;
+    }
+
+    function wireRadios(step) {
+      if (step === 2) {
+        document.querySelectorAll('input[name="stage"]').forEach(function(r) {
+          r.addEventListener('change', function() {
+            document.getElementById('btn-next-2').disabled = false;
+            document.querySelectorAll('label.quiz-option').forEach(function(l) {
+              if (l.querySelector('input[name="stage"]')) l.classList.remove('selected');
+            });
+            r.closest('label').classList.add('selected');
+          });
+        });
+      }
+      if (step === 3) {
+        document.querySelectorAll('input[name="labs"]').forEach(function(r) {
+          r.addEventListener('change', function() {
+            document.getElementById('btn-next-3').disabled = false;
+            document.querySelectorAll('label.quiz-option').forEach(function(l) {
+              if (l.querySelector('input[name="labs"]')) l.classList.remove('selected');
+            });
+            r.closest('label').classList.add('selected');
+          });
+        });
+      }
+    }
+
+    // Checkbox visual toggle for step 1
+    document.querySelectorAll('input[name="symptoms"]').forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        cb.closest('label').classList.toggle('selected', cb.checked);
+      });
+    });
+
+    function quizSubmit() {
+      var firstName = document.getElementById('contact-first').value.trim();
+      var lastName  = document.getElementById('contact-last').value.trim();
+      var email     = document.getElementById('contact-email').value.trim();
+      var phone     = document.getElementById('contact-phone').value.trim();
+      var errorEl   = document.getElementById('contact-error');
+
+      if (!firstName || !lastName || !email || !phone) {
+        errorEl.style.display = 'block';
+        return;
+      }
+      errorEl.style.display = 'none';
+
+      var symptoms = Array.from(document.querySelectorAll('input[name="symptoms"]:checked')).map(function(c) { return c.value; });
+      var stage    = (document.querySelector('input[name="stage"]:checked') || {}).value || '';
+      var labs     = (document.querySelector('input[name="labs"]:checked') || {}).value || '';
+
+      quizAnswers = { symptoms: symptoms, stage: stage, labs: labs, firstName: firstName, lastName: lastName, email: email, phone: phone };
+
+      // GA4
+      gtag('event', 'womenshealth_quiz_complete', { symptoms: symptoms.join(', '), stage: stage, labs: labs });
+
+      // Disable button, show loading state
+      var btn = document.getElementById('btn-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      // Source string with all quiz answers
+      var sourceStr = 'Women\'s Health Quiz'
+        + ' | Symptoms: ' + (symptoms.length ? symptoms.join(', ') : 'None selected')
+        + ' | Stage: ' + (stage || 'Not answered')
+        + ' | Labs: ' + (labs || 'Not answered');
+
+      var payload = {
+        type: 'lead.create',
+        payload: {
+          firstName:   firstName,
+          lastName:    lastName,
+          email:       email,
+          phoneNumber: phone,
+          source:      sourceStr
+        }
+      };
+
+      fetch(PROSPYR_URL, {
+        method:  'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'token': PROSPYR_TOKEN
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function() {
+        quizShowResult(symptoms, stage, labs);
+        window.open('https://link.som.md/hormoneoptimization_lp', '_blank');
+      })
+      .catch(function() {
+        quizShowResult(symptoms, stage, labs);
+        window.open('https://link.som.md/hormoneoptimization_lp', '_blank');
+      });
+    }
+
+    function quizShowResult(symptoms, stage, labs) {
+      var headline, body, tags = [];
+
+      var hasHormone = symptoms.some(function(s) {
+        return ['Brain fog or memory issues','Mood changes or anxiety','Low libido','Hot flashes','Poor sleep or night sweats'].indexOf(s) >= 0;
+      });
+      var hasWeight  = symptoms.indexOf('Weight gain (especially belly)') >= 0;
+      var hasFatigue = symptoms.indexOf('Fatigue or low energy') >= 0;
+
+      if (hasHormone) { tags.push('Hormone Evaluation'); }
+      if (hasWeight)  { tags.push('Metabolic Panel'); }
+      if (hasFatigue) { tags.push('Lab Assessment'); }
+      if (symptoms.indexOf('Hair thinning') >= 0) { tags.push('Thyroid Screen'); }
+      if (tags.length === 0) { tags.push('Wellness Consult'); }
+
+      if (hasHormone && hasWeight) {
+        headline = 'Sounds like hormones and metabolism are both in play.';
+        body = 'Book your $99 consult at SOM Aesthetics, which will include a comprehensive hormone lab assessment, metabolic panel, and a personalized care plan. Same-week appointments available. No labs needed before your visit — we\'ll order what\'s relevant.';
+      } else if (hasHormone) {
+        headline = 'Based on your symptoms, hormone optimization is a strong starting point.';
+        body = 'Book your $99 consult at SOM Aesthetics, which will include a full comprehensive hormone lab assessment and a personalized care plan. Same-week appointments available. No labs needed before your visit — we\'ll order what\'s relevant.';
+      } else if (hasWeight) {
+        headline = 'Weight changes after 35 are rarely about willpower.';
+        body = 'Book your $99 consult at SOM Aesthetics, which will include a metabolic assessment and a personalized care plan. Same-week appointments available. No labs needed before your visit — we\'ll order what\'s relevant.';
+      } else {
+        headline = 'You deserve real answers — not "everything looks normal."';
+        body = 'Book your $99 consult at SOM Aesthetics, which will include a full comprehensive hormone lab assessment and a personalized care plan. Same-week appointments available. No labs needed before your visit — we\'ll order what\'s relevant.';
+      }
+
+      if (labs === 'Yes, I have recent labs') {
+        body += ' Bring any existing labs — we\'ll review them at your visit.';
+      }
+
+      document.getElementById('result-headline').textContent = headline;
+      document.getElementById('result-body').textContent = body;
+
+      var tagContainer = document.getElementById('result-tags');
+      tagContainer.innerHTML = '';
+      tags.forEach(function(t) {
+        var span = document.createElement('span');
+        span.className = 'quiz-result-tag';
+        span.textContent = t;
+        tagContainer.appendChild(span);
+      });
+
+      document.getElementById('step-4').classList.remove('active');
+      document.getElementById('quiz-result').classList.add('active');
+      document.getElementById('quiz-progress-fill').style.width = '100%';
+      document.getElementById('quiz-progress-label').textContent = 'Your results';
+      document.getElementById('quiz-card-note').style.display = 'none';
+    }
+
+    function quizRestart() {
+      document.getElementById('quiz-result').classList.remove('active');
+      document.querySelectorAll('#quiz input[type="checkbox"], #quiz input[type="radio"]').forEach(function(i) { i.checked = false; });
+      document.querySelectorAll('#quiz label.quiz-option').forEach(function(l) { l.classList.remove('selected'); });
+      document.querySelectorAll('#quiz input[type="text"], #quiz input[type="email"], #quiz input[type="tel"]').forEach(function(i) { i.value = ''; });
+      document.getElementById('btn-next-2').disabled = true;
+      document.getElementById('btn-next-3').disabled = true;
+      document.getElementById('btn-submit').textContent = 'Send My Results →';
+      document.getElementById('btn-submit').disabled = false;
+      document.getElementById('contact-error').style.display = 'none';
+      document.getElementById('quiz-card-note').style.display = '';
+      document.getElementById('step-1').classList.add('active');
+      updateProgress(1);
+    }
+
+    /* ── FAQ ── */
     function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el) {
         el.classList.remove('open');
         el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
@@ -771,9 +1113,11 @@
         btn.setAttribute('aria-expanded', 'true');
       }
     }
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    /* ── SMOOTH SCROLL ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        var target = document.querySelector(this.getAttribute('href'));
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
