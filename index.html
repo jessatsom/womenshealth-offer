@@ -964,8 +964,8 @@
 
   <script>
     /* ── QUIZ LOGIC ── */
-    var PROSPYR_URL   = 'https://inn.gs/e/hrs7QRa0s7Vm2Q9ZjH50uCAupctGAzKdw7VStiseWR70dEgwMOvny87weA7iRpGMSC39Xunh1xTz3SgjUXUalw';
-    var PROSPYR_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3b3Jrc3BhY2VJZCI6IjVmZjgzZTE5LTIyYjEtNDNlNy05NTA4LTYwNGM4NmI5OWI5ZCIsInZlbmRvciI6IkludGVybmFsIiwiaWF0IjoxNzgyMTYxMzgyfQ.J_FMb-cZHgFPiXtp4shGgCmxA_Y0mbLZasOkNVwYsmU';
+    var PROSPYR_URL   = 'https://prospyr-proxy.jess-f0a.workers.dev';
+    var PROSPYR_TOKEN = '';
 
     var TOTAL_STEPS = 4;
     var quizAnswers = { symptoms: [], stage: '', labs: '', firstName: '', lastName: '', email: '', phone: '' };
@@ -1068,8 +1068,7 @@
       fetch(PROSPYR_URL, {
         method:  'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'token': PROSPYR_TOKEN
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       })
